@@ -7,6 +7,12 @@
 
 PID Controller for group TDD1
 
+Driver- Amrish Baskaran
+Github- amrish1222
+
+Navigator- Kapil Rawal
+Guthub- krawal19
+
 ## Standard install via command-line
 ```
 git clone https://github.com/amrish1222/PID_TDD1A.git

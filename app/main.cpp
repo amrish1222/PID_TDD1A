@@ -1,8 +1,10 @@
+/** @file main.cpp
+ * @brief Executing PID controller
+ * @author Driver- Amrish Baskaran; Navigator- Kapil Rawal
+ * Copyright 2018 Amrish Baskaran
+ */
 #include <iostream>
-#include <lib.hpp>
 
-int main()
-{
-    dummy();
-    return 0;
+int main() {
+  return 0;
 }
