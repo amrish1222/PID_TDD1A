@@ -12,15 +12,49 @@
 class PID {
  private:
   // Declaration of class members
+  /**
+   * @brief kp proportional gain
+   */
   double kp;
+
+  /**
+   * @brief kd derivative gain
+   */
   double kd;
+
+  /**
+   * @brief ki integral gain
+   */
   double ki;
+
+  /**
+   * @brief storing the previous error value
+   */
   double prevError;
+
+  /**
+   * @brief dT time constant
+   */
   double dt;
-  double integral;
+
+  /**
+   * @brief minimum value of output of compute()
+   */
   double minRange;
+
+  /**
+   * @brief maximum value of output of compute()
+   */
   double maxRange;
+
+  /**
+   * @brief setpoint- desired value
+   */
   double setPoint;
+
+  /**
+   * @brief Process variable -value returned by the sensor/ feedback
+   */
   double feedBackVal;
 
  public:
@@ -37,9 +71,8 @@ class PID {
   /**
    * @brief executes the PID controller flow.
    * @param none
-   * @return new control value.
+   * @return new controller value.
    */
-
   double compute();  // Compute method
 
   /**

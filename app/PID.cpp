@@ -12,7 +12,6 @@ PID::PID() {
   ki = 0;
   prevError = 0;
   dt = 0.0001;  // cannot be zero
-  integral = 0;
   minRange = 0;
   maxRange = 0;
   setPoint = 0;
@@ -22,11 +21,23 @@ PID::PID() {
 PID::~PID() {
 }
 
-
+/**
+ * @brief executes the PID controller flow.
+ * uses the error value (=setPoint- feedBack) with the respective gains to obtain
+ * the correction value that will be sent to the controller to
+ * correct its state to achieve the desired setPoint value.
+ * @param none
+ * @return new controller value.
+ */
 double PID::compute() {
   return 5;
 }
 
+/**
+ * @brief Initializes the required variables
+ * @param Kp1:double, Ki1:double, Kd1:double, dt1:double, max1:double, min1:double
+ * @return none.
+ */
 void PID::setValues(double Kp1, double Ki1, double Kd1, double dt1, double max1,
                     double min1) {
   kp = Kp1;
@@ -37,6 +48,13 @@ void PID::setValues(double Kp1, double Ki1, double Kd1, double dt1, double max1,
   minRange = min1;
 }
 
+/**
+ * @brief Initializes the required variables
+ * stores the variables that the compute method uses
+ * to calculate the required correction value.
+ * @param setPoint1:double, feedBackVal1:double
+ * @return none.
+ */
 void PID::setCurrentState(double setPoint1, double feedBackVal1) {
   setPoint = setPoint1;
   feedBackVal = feedBackVal1;
