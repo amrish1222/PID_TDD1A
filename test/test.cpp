@@ -8,8 +8,6 @@
 #include"PID.h"
 
 
-
-
 /**
  * @brief Test initialization of private variables
  */
@@ -21,7 +19,6 @@ TEST(PID_Test, InitValuesTest) {
   EXPECT_EQ(0, PID1.getKi());
   EXPECT_EQ(0, PID1.getMin());
   EXPECT_EQ(0, PID1.getMax());
-  EXPECT_EQ(0.0001, PID1.getDt());
 }
 
 /**
@@ -30,10 +27,10 @@ TEST(PID_Test, InitValuesTest) {
  */
 TEST(PID_Test, SetParamsTest) {
   PID PID1;
-  PID1.setValues(1, 0.5, 0.1, 1, 30, 2);  // Setting the required parameters.
+  PID1.setValues(1, 5, 1, 1, 30, 2);  // Setting the required parameters.
   EXPECT_EQ(1, PID1.getKp());
-  EXPECT_EQ(0.5, PID1.getKi());
-  EXPECT_EQ(0.1, PID1.getKd());
+  EXPECT_EQ(5, PID1.getKi());
+  EXPECT_EQ(1, PID1.getKd());
   EXPECT_EQ(2, PID1.getMin());
   EXPECT_EQ(30, PID1.getMax());
   EXPECT_EQ(1, PID1.getDt());
