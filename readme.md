@@ -13,6 +13,14 @@ Github- amrish1222
 Navigator- Kapil Rawal
 Guthub- krawal19
 
+Part 2 
+Author: Saimouli Katragadda (saimouli) </br> 
+Role: Solo programmer 
+
+## TODO
+- Add a saturation limit to PID.cpp file 
+- Clean the readme.md file  
+
 ## Standard install via command-line
 ```
 git clone https://github.com/amrish1222/PID_TDD1A.git
