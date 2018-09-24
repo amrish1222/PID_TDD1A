@@ -57,6 +57,11 @@ class PID {
    */
   double feedBackVal;
 
+  /**
+   * @brief error collection for the integral part
+   */
+  double Integral;
+
  public:
 
   /**

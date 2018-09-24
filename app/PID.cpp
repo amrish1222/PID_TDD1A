@@ -16,6 +16,7 @@ PID::PID() {
   maxRange = 0;
   setPoint = 0;
   feedBackVal = 0;
+  Integral = 0;
 }
 
 PID::~PID() {
