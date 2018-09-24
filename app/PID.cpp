@@ -1,6 +1,7 @@
 /** @file PID.cpp
  * @brief PID controller source file
  * @author Driver- Amrish Baskaran; Navigator- Kapil Rawal
+ * @author Part 2 - Saimouli Katragadda
  * Copyright 2018 Amrish Baskaran
  */
 
@@ -30,7 +31,18 @@ PID::~PID() {
  * @return new controller value.
  */
 double PID::compute() {
-  return 5;
+  float error = 0, Ucontrol = 0;
+  error = setPoint - feedBackVal;
+  float iTerm = 0, dTerm = 0;
+  iTerm += error * dt;  // calculating the i term
+
+  dTerm = (error - prevError) / dt;  // calculating the derivative
+
+  Ucontrol = kp * error + ki * iTerm + kd * dTerm;  // control input calculation
+
+  prevError = error;  // setting the current error as previous error for next iter
+
+  return Ucontrol;
 }
 
 /**
@@ -83,7 +95,3 @@ double PID::getMax() {
 double PID::getMin() {
   return minRange;
 }
-
-
-
-
