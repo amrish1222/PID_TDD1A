@@ -3,21 +3,30 @@
 [![Coverage Status](https://coveralls.io/repos/github/amrish1222/PID_TDD1A/badge.svg?branch=master)](https://coveralls.io/github/amrish1222/PID_TDD1A?branch=master)
 ---
 
-## Overview
-
-PID Controller for group TDD1
-
+## Authors
+```
+Part 1
 Driver- Amrish Baskaran
 Github- amrish1222
 
 Navigator- Kapil Rawal
-Guthub- krawal19
+Github- krawal19
+```
 
+```
 Part 2 
 Author: Saimouli Katragadda (saimouli) </br> 
 Role: Solo programmer 
+```
 
-## TODO
+## Overview
+PID Controller controller implemented using Pair programming and the following
+* cmake
+* googletest
+* Travis CI
+* Coveralls
+
+## TODOs discussion
 - Add a saturation limit to PID.cpp file 
 - Clean the readme.md file  
 
