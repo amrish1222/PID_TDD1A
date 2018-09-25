@@ -17,6 +17,7 @@ PID::PID() {
   maxRange = 0;
   setPoint = 0;
   feedBackVal = 0;
+  Integral = 0;
 }
 
 PID::~PID() {
@@ -33,14 +34,14 @@ PID::~PID() {
 double PID::compute() {
   float error = 0, Ucontrol = 0;
   error = setPoint - feedBackVal;
-  float iTerm = 0, dTerm = 0;
-  iTerm += error * dt;  // calculating the i term
+  float dTerm = 0;
+  Integral += error * dt;  // calculating the i term
 
   dTerm = (error - prevError) / dt;  // calculating the derivative
 
-  Ucontrol = kp * error + ki * iTerm + kd * dTerm;  // control input calculation
+  Ucontrol = kp * error + ki * Integral + kd * dTerm;  // control input calculation
 
-  prevError = error;  // setting the current error as previous error for next iter
+  prevError = error;  // setting the error for next iter
 
   return Ucontrol;
 }
