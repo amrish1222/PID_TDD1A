@@ -1,6 +1,6 @@
 # PID Controller TDD1A
-[![Build Status](https://travis-ci.org/saimouli/PID_TDD1A.svg?branch=master)](https://travis-ci.org/saimouli/PID_TDD1A)
-[![Coverage Status](https://coveralls.io/repos/github/saimouli/PID_TDD1A/badge.svg?branch=master)](https://coveralls.io/github/saimouli/PID_TDD1A?branch=master)
+[![Build Status](https://travis-ci.org/amrish1222/PID_TDD1A.svg?branch=master)](https://travis-ci.org/amrish1222/PID_TDD1A)
+[![Coverage Status](https://coveralls.io/repos/github/amrish1222/PID_TDD1A/badge.svg?branch=master)](https://coveralls.io/github/amrish1222/PID_TDD1A?branch=master)
 ---
 
 ## Overview
