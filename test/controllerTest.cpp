@@ -4,6 +4,7 @@
  * @author Driver- Amrish Baskaran; Navigator- Kapil Rawal
  * Copyright 2018 Amrish Baskaran
  */
+#include <iostream>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
@@ -11,6 +12,8 @@
 #include"../include/Controller.h"
 
 using ::testing::AtLeast;
+using ::testing::_;
+using ::testing::Return;
 
 class MockPID : public PID {
  public:
@@ -26,10 +29,29 @@ class MockPID : public PID {
 };
 
 TEST(ControllerTest,RunControllerTest) {
+  // creating mock object
   MockPID pid;
-  EXPECT_CALL(pid, compute()).Times(AtLeast(1));
+  EXPECT_CALL(pid, getKp()).Times(AtLeast(1)).WillRepeatedly(Return(1));
+  EXPECT_CALL(pid, getKd()).Times(AtLeast(1)).WillRepeatedly(Return(2));
+  EXPECT_CALL(pid, getKi()).Times(AtLeast(1)).WillRepeatedly(Return(3));
+  EXPECT_CALL(pid, compute()).Times(AtLeast(1)).WillRepeatedly(Return(10));
+  EXPECT_CALL(pid, setCurrentState(_,_)).Times(AtLeast(1));
+  EXPECT_CALL(pid, setValues(_,_,_,_,_,_)).Times(AtLeast(1));
+
+
+  int _Kp = pid.getKp();
+  int _Kd = pid.getKd();
+  int _Ki = pid.getKi();
+
+  //pid.compute();
+
   Controller _controller(pid);
   int isDone = _controller.runController(10);
+  std::cout << isDone << std::endl;
+
   EXPECT_EQ(0, isDone);
+  EXPECT_EQ(1, _Kp);
+  EXPECT_EQ(2, _Kd);
+  EXPECT_EQ(3, _Ki);
 
 }
