@@ -6,7 +6,7 @@
  */
 
 #include "PID.h"
-
+#include <iostream>
 PID::PID() {
   kp = 0;
   kd = 0;
@@ -32,6 +32,7 @@ PID::~PID() {
  * @return new controller value.
  */
 double PID::compute() {
+  std::cout << "computing" << std::endl;
   float error = 0, Ucontrol = 0;
   error = setPoint - feedBackVal;
   float dTerm = 0;
@@ -41,7 +42,7 @@ double PID::compute() {
 
   Ucontrol = kp * error + ki * Integral + kd * dTerm;  // control input calculation
 
-  prevError = error;  // setting the error for next iter
+  prevError = error;  // setting the error for next iteration
 
   return Ucontrol;
 }
