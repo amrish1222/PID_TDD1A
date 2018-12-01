@@ -16,11 +16,10 @@ Controller::Controller(PID &_p1)
 }
 
 Controller::~Controller() {
-  // TODO Auto-generated destructor stub
+
 }
 
 int Controller::runController(double velocity) {
-  //PID pid;
   // set the PID controller gains
   _pid.setValues(0.1, 0.1, 0.1, 0.5, 20, 0);
   int count = 0;

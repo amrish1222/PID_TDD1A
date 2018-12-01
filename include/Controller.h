@@ -12,10 +12,9 @@
 
 class Controller {
  public:
+  PID &_pid;
   Controller(PID& pid);
   virtual ~Controller();
-
-  PID _pid;
 
   int runController(double velocity);
 };
