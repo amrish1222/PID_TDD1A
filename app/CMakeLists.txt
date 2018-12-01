@@ -1,4 +1,4 @@
-add_executable(shell-app main.cpp PID.cpp)
+add_executable(shell-app main.cpp PID.cpp Controller.cpp)
 include_directories(
     ${CMAKE_SOURCE_DIR}/include
 )
